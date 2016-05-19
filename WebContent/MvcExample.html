@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+<!-- ng-app directive defines angular js application -must***-->
+<div ng-app="myapp">
+	<div ng-controller="HelloController" >
+	<h2>Welcome {{helloTo.title}} to the world of Tutorialspoint!</h2>
+	</div>
+
+<w3-test-directive></w3-test-directive>
+
+<script>
+var app = angular.module("myapp", []);
+app.directive("w3TestDirective", function() {
+    return {
+        template : "<h1>Made by a directive!</h1>"
+    };
+});
+
+app.controller("HelloController", function($scope) {
+$scope.helloTo = {};
+$scope.helloTo.title = "AngularJS";
+});
+</script>
+</div>
+
+</body>
+</html>

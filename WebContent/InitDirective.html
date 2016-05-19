@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+<!-- ng-app directive defines angular js application -must***-->
+<div  ng-init="countries=[{locale:'Us', name:'United States'},
+									   {locale:'Fr', name:'France'},
+									    {locale:'Uk', name:'United Kingdom'}] ">
+
+<p> Enter Your Name : <Input type="text" ng-model="name"/></p>
+<p>Hello <span ng-bind="name"></span></p>
+<p> Countries are:</p>
+<ol>
+<li ng-repeat="country in countries" >
+ {{ 'Country: ' + country.name + ', Locale: ' + country.locale }}
+</li>
+</ol>
+</div>
+</body>
+</html>
